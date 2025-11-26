@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.routers import threads
-from app.routers import post
+from app.routers import posts
 
 app = FastAPI(
     title="BBS API",

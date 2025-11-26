@@ -16,4 +16,3 @@ class PostResponse(PostBase):
     post_number: int
     created_at: str
     
-    
