@@ -174,16 +174,14 @@ async def create_new_post(
             Post.id == parent_post_id_hidden,
             Post.thread_id == thread_id,
         )
-       parent = db.execute(stmt_parent).scalar_one_or_none()
+        parent = db.execute(stmt_parent).scalar_one_or_none()
 
-	    if parent is None:
-  	      raise HTTPException(
-    	       	status_code=400,
-      	     	detail="Parent post does not exist"
-        	)
-
-
-
+        if parent is None:
+  	        raise HTTPException(
+                status_code=400,
+                detail="Parent post does not exist"
+            )
+           
     # 次のpost_numberを取得
     stmt_last = (select(Post.post_number)
                 .where(Post.thread_id == thread_id)
